@@ -8,6 +8,8 @@ delete window.WebGLRenderingContext;
 
 let realGetContext = HTMLCanvasElement.prototype.getContext;
 
+var serverUrl = "";
+
 HTMLCanvasElement.prototype.getContext = function (id, n) {
   if (
     id === "experimental-webgl" ||
@@ -32,7 +34,7 @@ console.log("Using NICE DCV Web Client SDK version " + dcv.version.versionStr);
     dcv.setLogLevel(dcv.LogLevel.INFO);
 
     const url = new URL(window.location.href); 
-    const serverUrl = url.searchParams.get('server'); 
+    serverUrl = url.searchParams.get('server'); 
         
     console.log("Starting authentication with", serverUrl);
     
