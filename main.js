@@ -27,14 +27,12 @@ let auth,
 console.log("Using NICE DCV Web Client SDK version " + dcv.version.versionStr);
 // document.addEventListener('DOMContentLoaded', main);
 
-var URL="";
-
 (function main () {
     console.log("Setting log level to INFO");
     dcv.setLogLevel(dcv.LogLevel.INFO);
 
-    const URL = new URL(window.location.href); 
-    const serverUrl = URL.searchParams.get('server'); 
+    const url = new URL(window.location.href); 
+    const serverUrl = url.searchParams.get('server'); 
         
     console.log("Starting authentication with", serverUrl);
     
